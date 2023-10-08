@@ -95,6 +95,5 @@ if __name__ == '__main__':
     root = Tk()
     asd = gui(root)
     root.geometry("960x540")
-    root.resizable(False, False )
+    root.resizable(False, False)
     root.mainloop()
-    
