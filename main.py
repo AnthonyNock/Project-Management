@@ -1,5 +1,6 @@
 from tkinter import *
 from random import shuffle
+from random import randint
 from json import loads
 class game():
     def __init__(self):
@@ -11,8 +12,6 @@ class game():
         self.current_card = None
         self.hands = [[],[],[],[]]
         game.read_files(self)
-    def play_card(self, card):
-        pass
     def read_files(self):
         try:
             file = open("deck.json", encoding="utf-8")
@@ -28,6 +27,9 @@ class game():
     def shuffle_deck(self):
         shuffle(self.deck[0])
         x = 0
+        for i in range(4):
+            to_remove = randint(0,len(self.deck[0])-1)
+            self.deck[0].pop(to_remove)
         for i in range(len(self.deck[0])):
             if x == 4:
                 x = 0
@@ -72,24 +74,19 @@ class gui:
     
     def layout_gui(self, parent):
         f1 = Frame(parent)
-        f1.grid(row = 1, column = 2)
+        f1.grid(row = 1, column = 1)
         f2 = Frame(parent)
-        f2.grid(row = 2, column = 2)
+        f2.grid(row = 2, column = 1)
         f3 = Frame(parent)
-        f3.grid(row = 2, column = 1)
-        f4 = Frame(parent)
-        f4.grid(row = 2, column = 3)
-        f5 = Frame(parent)
-        f5.grid(row = 3, column = 1)
-        f6 = Frame(parent)
-        f6.grid(row = 3, column = 2)
-        f7 = Frame(parent)
-        f7.grid(row = 3, column = 3)
-
+        f3.grid(row = 1, column = 2)
+    def play_card(self, card):
+        print(card)
+        PhotoImage(self.f1, Image = "asd")
     #def run_game(self):
         #game()
         #game.__init__(self)
         #game.show_hands(self)
+    play_card()
 
 if __name__ == '__main__':
     root = Tk()
