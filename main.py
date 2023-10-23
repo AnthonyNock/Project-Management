@@ -4,7 +4,7 @@ from random import randint
 from json import loads
 class data():
     def __init__(self):
-        self.formatted_cards = []
+        self.formatted_cards = {}
     def read_files(self):
         try:
             file = open("deck.json", encoding="utf-8")
@@ -16,17 +16,21 @@ class data():
             #   print(item)
             self.deck = self.read_file['deck']
             self.values = self.read_file['values']
+            i = 0
             for item in self.cards:
-                self.formatted_cards.append(PhotoImage(file = self.cards[item]))
-            print("\n\n\nSelf.deck \n\n\n")
-            for item in self.deck:
-                print(item)
-            print("\n\n\nSelf.values \n\n\n")
-            for item in self.values:
-                print(item)
-            print("\n\n\nself.formatted_cards \n\n\n")
-            for item in self.formatted_cards:
-                print(item)
+                self.formatted_cards[self.deck[i]]  = PhotoImage(file = self.cards[item])
+                i += 1
+            print(self.formatted_cards[self.deck[0]])
+            print(self.cards)
+            print(self.formatted_cards)
+          #  print("\n\n\nSelf.deck \n\n\n")
+          #  for item in self.deck:
+            #    print(item)
+           # print("\n\n\nSelf.values \n\n\n")
+            #for item in self.values:
+                #print(item)
+            #print("\n\n\nself.formatted_cards \n\n\n")
+            #print(self.formatted_cards)
             return self.deck, self.formatted_cards, self.values
         except FileNotFoundError:
             print("Missing File 'deck.json'")
@@ -36,7 +40,7 @@ class data():
 
 class gui:
     def  __init__(self, parent):
-        self.formatted_cards = []
+        self.formatted_cards = {}
         self.layout_gui(parent)
         self.deck = []
         self.card_reference = {}
@@ -44,19 +48,22 @@ class gui:
         self.runs = True
         self.current_card = None
         self.hands = [[],[],[],[]]
-        self.cards, self.deck, self.values = data.read_files(self)
+        self.deck, self.cards, self.values = data.read_files(self)
+        print(self.cards)
         #self.run_game(parent)
+        #self.play_card("asd")
+        print(self.cards[self.deck[0]])
+        self.imageLabel = Label(self.f1, image = self.cards[self.deck[0]], height = 150, width = 200, padx = 20 )
     
     def layout_gui(self, parent):
-        f1 = Frame(parent)
-        f1.grid(row = 1, column = 1)
-        f2 = Frame(parent)
-        f2.grid(row = 2, column = 1)
-        f3 = Frame(parent)
-        f3.grid(row = 1, column = 2)
+        self.f1 = Frame(parent)
+        self.f1.grid(row = 1, column = 1)
+        self.f2 = Frame(parent)
+        self.f2.grid(row = 2, column = 1)
+        self.f3 = Frame(parent)
+        self.f3.grid(row = 1, column = 2)
     def play_card(self, card):
-        print(card)
-        PhotoImage(self.f1, Image = "asd")
+        pass
     def shuffle_deck(self):
         shuffle(self.deck[0])
         x = 0
