@@ -1,7 +1,6 @@
 from tkinter import *
 from random import shuffle
 from random import randint
-from PIL import Image
 from json import loads
 class data():
     def __init__(self):
@@ -12,11 +11,11 @@ class data():
             self.read_file = loads(file.read())
             self.cards = {}
             self.cards = self.read_file['cards']
-            
+            self.cards2 = self.read_file['cards2']
             self.deck = self.read_file['deck']
             self.values = self.read_file['values']
             #print(x)
-            return self.deck, self.cards, self.values,
+            return self.deck, self.cards, self.values, self.cards2
         except FileNotFoundError:
             print("Missing File 'deck.json'")
             quit()
@@ -26,8 +25,9 @@ class gui:
         self.layout_gui(parent)
         self.deck = []
         self.hands = [[],[],[],[]]
-        self.deck, self.cards, self.values = data.read_files(self)
-        self.image = PhotoImage(file = self.cards[self.deck[1]])
+        self.asd = "spadeking.gif"
+        self.deck, self.cards, self.values, self.cards2 = data.read_files(self)
+        self.image = PhotoImage(file = self.asd)
         self.imageLabel = Label(self.f1, image = self.image, height = 150, width = 200, padx = 20, text = "text" )
         self.imageLabel.pack()
         self.deal_hands()
@@ -52,7 +52,8 @@ class gui:
     def display_hand(self):
         i = 0
         for item in self.hands[0]:
-            self.image = PhotoImage(file = self.cards[item])
+            print(item)
+            self.image = PhotoImage(file = self.cards[self.deck[self.deck.index(item)]])
             self.imageLabel2 = Label(self.f2, image = self.image, height = 150, width = 200, padx = 20,)
             self.imageLabel2.grid(row = 0, column = i)
             i += 1
