@@ -2,7 +2,7 @@ from tkinter import *
 from random import shuffle
 from random import randint
 from json import loads
-class game():
+class data():
     def __init__(self):
         self.formatted_cards = []
     def read_files(self):
@@ -13,17 +13,20 @@ class game():
             self.cards = self.read_file['cards']
             print(self.cards)
             #for item in self.cards:
-             #   print(item)
+            #   print(item)
             self.deck = self.read_file['deck']
             self.values = self.read_file['values']
             for item in self.cards:
                 self.formatted_cards.append(PhotoImage(file = self.cards[item]))
-            #for item in self.deck:
-             #   print(item)
-            #for item in self.values:
-            #    print(item)
-            #for item in self.cards:
-            #    print(item)
+            print("\n\n\nSelf.deck \n\n\n")
+            for item in self.deck:
+                print(item)
+            print("\n\n\nSelf.values \n\n\n")
+            for item in self.values:
+                print(item)
+            print("\n\n\nself.formatted_cards \n\n\n")
+            for item in self.formatted_cards:
+                print(item)
             return self.deck, self.formatted_cards, self.values
         except FileNotFoundError:
             print("Missing File 'deck.json'")
@@ -41,7 +44,7 @@ class gui:
         self.runs = True
         self.current_card = None
         self.hands = [[],[],[],[]]
-        self.cards, self.deck, self.values = game.read_files(self)
+        self.cards, self.deck, self.values = data.read_files(self)
         #self.run_game(parent)
     
     def layout_gui(self, parent):
