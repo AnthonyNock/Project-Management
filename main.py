@@ -4,15 +4,27 @@ from random import randint
 from json import loads
 class game():
     def __init__(self):
-        pass
+        self.formatted_cards = []
     def read_files(self):
         try:
             file = open("deck.json", encoding="utf-8")
             self.read_file = loads(file.read())
+            self.cards = {}
             self.cards = self.read_file['cards']
+            print(self.cards)
+            #for item in self.cards:
+             #   print(item)
             self.deck = self.read_file['deck']
             self.values = self.read_file['values']
-            return self.cards, self.deck, self.values
+            for item in self.cards:
+                self.formatted_cards.append(PhotoImage(file = self.cards[item]))
+            #for item in self.deck:
+             #   print(item)
+            #for item in self.values:
+            #    print(item)
+            #for item in self.cards:
+            #    print(item)
+            return self.deck, self.formatted_cards, self.values
         except FileNotFoundError:
             print("Missing File 'deck.json'")
             quit()
@@ -21,6 +33,7 @@ class game():
 
 class gui:
     def  __init__(self, parent):
+        self.formatted_cards = []
         self.layout_gui(parent)
         self.deck = []
         self.card_reference = {}
@@ -62,6 +75,8 @@ class gui:
         if self.evens == False and self.runs == False:
             print()
     def check_card(self):
+        pass
+    def display_hand(self):
         pass
     def print_deck(self):
         i = 0

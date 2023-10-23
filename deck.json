@@ -1,6 +1,5 @@
 {
     "cards":
-    [
         {
             "King Of Spades":"SpadeKing.png","Queen Of Spades":"SpadeQueen.png", "Jack Of Spades":"SpadeJack.png", "Ten Of Spades":"Spade10.png","Nine Of Spades":"Spade9.png", "Eight Of Spades":"Spade8.png","Seven Of Spades":"Spade7.png", "Six Of Spades":"Spade6.png","Five Of Spades":"Spade5.png","Four Of Spades":"Spade4.png","Three Of Spades":"Spade3.png","Two Of Spades":"Spade2.png","Ace Of Spades":"SpadeAce.png", 
             "King Of Diamonds":"DiamondKing.png","Queen Of Diamonds":"DiamondQueen.png", "Jack Of Diamonds":"DiamondJack.png", "Ten Of Diamonds":"Diamond10.png","Nine Of Diamonds":"Diamond9.png", "Eight Of Diamonds":"Diamond8.png","Seven Of Diamonds":"Diamond7.png", "Six Of Diamonds":"Diamond6.png","Five Of Diamonds":"Diamond.png","Four Of Diamonds":"Diamond4.png","Three Of Diamonds":"Diamond3.png","Two Of Diamonds":"Diamond2.png","Ace Of Diamonds":"DiamondAce.png",
@@ -8,19 +7,16 @@
             "King Of Clubs":"ClubKing.png","Queen Of Clubs":"ClubQueen.png", "Jack Of Clubs":"ClubJack.png", "Ten Of Clubs":"Club10.png","Nine Of Clubs":"Club9.png", "Eight Of Clubs":"Club8.png","Seven Of Clubs":"Club7.png", "Six Of Clubs":"Club6.png","Five Of Clubs":"Club5.png","Four Of Clubs":"Club4.png","Three Of Clubs":"Club3.png","Two Of Clubs":"Club2.png","Ace Of Clubs":"ClubAce.png",
             "Joker_1":"Joker1.png","Joker_2":"Joker2.png"
         }
-    ],
+    ,
     "deck":
-    [
         [
             "King Of Spades", "Queen Of Spades", "Jack Of Spades", "Ten Of Spades", "Nine Of Spades", "Eight Of Spades", "Seven Of Spades", "Six Of Spades", "Five Of Spades", "Four Of Spades", "Three Of Spades", "Two Of Spades", "Ace Of Spades",
             "King Of Clubs", "Queen Of Clubs", "Jack Of Clubs", "Ten Of Clubs", "Nine Of Clubs", "Eight Of Clubs", "Seven Of Clubs", "Six Of Clubs", "Five Of Clubs", "Four Of Clubs", "Three Of Clubs", "Two Of Clubs", "Ace Of Clubs",
             "King Of Hearts", "Queen Of Hearts", "Jack Of Hearts", "Ten Of Hearts", "Nine Of Hearts", "Eight Of Hearts", "Seven Of Hearts", "Six Of Hearts", "Five Of Hearts", "Four Of Hearts", "Three Of Hearts", "Two Of Hearts", "Ace Of Hearts",
             "King Of Diamonds", "Queen Of Diamonds", "Jack Of Diamonds", "Ten Of Diamonds", "Nine Of Diamonds", "Eight Of Diamonds", "Seven Of Diamonds", "Six Of Diamonds", "Five Of Diamonds", "Four Of Diamonds", "Three Of Diamonds", "Two Of Diamonds", "Ace Of Diamonds",
             "Joker_1", "Joker_2"
-        ]
-    ],
+        ],
     "values":
-    [
         {
             "King Of Spades":"13","Queen Of Spades":"12", "Jack Of Spades":"11", "Ten Of Spades":"10","Nine Of Spades":"9", "Eight Of Spades":"8","Seven Of Spades":"7", "Six Of Spades":"6","Five Of Spades":"5","Four Of Spades":"4","Three Of Spades":"3","Two Of Spades":"2","Ace Of Spades":"1", 
             "King Of Diamonds":"13","Queen Of Diamonds":"12", "Jack Of Diamonds":"11", "Ten Of Diamonds":"10","Nine Of Diamonds":"9", "Eight Of Diamonds":"8","Seven Of Diamonds":"7", "Six Of Diamonds":"6","Five Of Diamonds":"5","Four Of Diamonds":"4","Three Of Diamonds":"3","Two Of Diamonds":"2","Ace Of Diamonds":"1",
@@ -28,5 +24,4 @@
             "King Of Clubs":"13","Queen Of Clubs":"12", "Jack Of Clubs":"11", "Ten Of Clubs":"10","Nine Of Clubs":"9", "Eight Of Clubs":"8","Seven Of Clubs":"7", "Six Of Clubs":"6","Five Of Clubs":"5","Four Of Clubs":"4","Three Of Clubs":"3","Two Of Clubs":"2","Ace Of Clubs":"1",
             "Joker_1":"100","Joker_2":"100"
         }
-    ]
 }
