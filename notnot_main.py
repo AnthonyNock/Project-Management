@@ -7,6 +7,7 @@ class gui:
         # Define variables and canvas
         self.canvas = Canvas(root, width = 960, height = 540)
         self.canvas.pack()
+        self.played_card = False
         self.hands = [[],[],[],[]]
         self.current_displayed_hand = []
         # Read file
@@ -42,26 +43,28 @@ class gui:
         self.shuffleddeck = self.shuffleddeck[4:]
     
     def card_clicked(self, card):
+        self.played_card = True
         print(card)
     
     def display_hand(self):
         i = 0
-        x = 60
+        start_distance = 60
         add_amount = 960/len(self.hands[0])
-        for item in self.hands[0]:
-            print(item)
-            index_number = None
-            self.image = PhotoImage(file = self.cards[self.deck.index(item)])
-            self.canvas.create_image(x,500, image = self.image)
-            button = Button(self.canvas, image = self.image)
-            button.place(x, 500)
-            button.bind('<Button-1>', self.card_clicked(item))
-            self.current_displayed_hand.append(self.image)
+        while self.played_card == False:
+            for item in self.hands[0]:
+            #print(item)
+                index_number = None
+                self.image = PhotoImage(file = self.cards[self.deck.index(item)])
+            #self.canvas.create_image(start_distance, 500, image = self.image)
+                button = Button(self.canvas, image = self.image, command = self.card_clicked(item))
+                button.place(x = start_distance-60, y = 390)
+                #button.bind('<Button-1>', self.card_clicked(item))
+                self.current_displayed_hand.append(self.image)
             #self.imageLabel2 = Label(parent, image = self.image, height = 150, width = 200, padx = 20,)
             #self.imageLabel2.grid(row = 1, column = i)
-            i += i
-            x += add_amount
-    
+                i += i
+                start_distance += add_amount
+                
 
 if __name__ == "__main__":
     root = Tk()
