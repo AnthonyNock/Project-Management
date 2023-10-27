@@ -5,7 +5,7 @@ from random import shuffle
 class gui:
     def __init__(self, parent):
         # Define variables and canvas
-        self.canvas = Canvas(root, width = 960, height = 540)
+        self.canvas = Canvas(root, width = 960, height = 540, background= 'green')
         self.canvas.pack()
         self.played_card = False
         self.hands = [[],[],[],[]]
